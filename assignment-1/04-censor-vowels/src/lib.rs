@@ -1,6 +1,10 @@
 pub fn censor_vowels(s: &mut String) {
-    let _ = s;
-    todo!("implement censor_vowels")
+    let censored: String = s.chars().map(|c| {
+        if "aeiouAEIOU".contains(c) { '*' } else { c }
+    }).collect();
+
+    s.clear();
+    s.push_str(&censored);
 }
 
 #[cfg(test)]
