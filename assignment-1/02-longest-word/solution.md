@@ -2,7 +2,7 @@
 
 ## Approach
 
-_Used split_whitespace() to get an iterator of &str slices. Used .reduce() with a closure to keep the longer word between two words. reduce() returns None when iterator is empty(either only whitespaces or empty inputs)._
+_Used split_whitespace() to get an iterator of &str slices. Used reduce() with a closure to keep the longer word between two words. reduce() returns None when iterator is empty(either only whitespaces or empty inputs)._
 
 ## Edge cases handled
 

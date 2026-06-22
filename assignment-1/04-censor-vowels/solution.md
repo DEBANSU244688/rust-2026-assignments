@@ -2,7 +2,7 @@
 
 ## Approach
 
-_Used .chars().map(|c| ...).collect() to build a copy where the closure replaces every ASCII vowel with '*' and others unchanged. Then replaced the contents of s in place using .clear() and then pushed the censored using .push_str()._
+_Used .chars().map(|c| ...).collect() to build a copy where the closure replaces every ASCII vowel with '*' and others unchanged. Then replaced the contents of s in place using clear() and then pushed the censored using push_str()._
 
 ## Edge cases handled
 

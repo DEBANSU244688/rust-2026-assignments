@@ -1,6 +1,23 @@
-pub fn group_anagrams(words: &[String]) -> Vec<Vec<String>> {
-    let _ = words;
-    todo!("implement group_anagrams")
+use std::collections::HashMap;
+
+pub fn group_anagrams(words: &[String]) -> Vec<Vec<String>> {    
+    let mut key_to_idx: HashMap<String, usize> = HashMap::new();
+    let mut groups: Vec<Vec<String>> = Vec::new();
+
+    for word in words {
+        let mut key: Vec<char> = word.to_lowercase().chars().collect();
+        key.sort();
+        let key: String = key.into_iter().collect();
+
+        let idx = key_to_idx.entry(key).or_insert_with(|| {
+            groups.push(Vec::new());
+            groups.len() - 1
+        });
+
+        groups[*idx].push(word.clone());
+    }
+
+    groups
 }
 
 #[cfg(test)]
